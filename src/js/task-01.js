@@ -1,3 +1,9 @@
-const h2Element = document.querySelector("item");
-const liElementsUnderH2 = h2Element.nextElementSibling.querySelectorAll("li");
-document.getElementById("item").textContent = liElementsUnderH2.length;
+const titles = document.querySelectorAll("h2").length;
+console.log("Number of categories:", titles);
+
+const items = document.querySelectorAll("li.item");
+for (const item of items) {
+  const category = item.firstElementChild.textContent;
+  const elements = item.querySelectorAll("li").length;
+  console.log(`Category: ${category} \n Elements: ${elements}`);
+}
